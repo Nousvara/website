@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <!-- Original artwork for the playable demo on the Jigsaw page: a sunset over
+       hills and a lake. Every area has its own shapes, so each of the nine
+       pieces is recognisable and the puzzle can actually be solved by eye. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b1b5a"/>
+      <stop offset="0.45" stop-color="#c2477a"/>
+      <stop offset="0.8" stop-color="#ff9a5a"/>
+      <stop offset="1" stop-color="#ffd27a"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9f6b"/>
+      <stop offset="1" stop-color="#2a3f8f"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff6c9"/>
+      <stop offset="1" stop-color="#ffc861"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#sky)"/>
+  <!-- stars in the top band -->
+  <g fill="#fff" opacity="0.85">
+    <circle cx="60" cy="50" r="2.5"/><circle cx="140" cy="95" r="1.8"/><circle cx="250" cy="40" r="2.2"/>
+    <circle cx="420" cy="70" r="2"/><circle cx="520" cy="35" r="2.6"/><circle cx="560" cy="120" r="1.6"/>
+    <circle cx="330" cy="110" r="1.5"/><circle cx="35" cy="150" r="1.7"/>
+  </g>
+  <!-- moon top right, sun centre -->
+  <path d="M520 150a38 38 0 1 1-30-60 30 30 0 1 0 30 60z" fill="#ffe9b0"/>
+  <circle cx="300" cy="300" r="78" fill="url(#sun)"/>
+  <!-- birds -->
+  <g fill="none" stroke="#3a1c4a" stroke-width="4" stroke-linecap="round">
+    <path d="M90 230q14-14 28 0q14-14 28 0"/><path d="M170 190q10-10 20 0q10-10 20 0"/>
+  </g>
+  <!-- far and near hills -->
+  <path d="M0 360 L90 290 L170 340 L260 270 L340 330 L430 260 L520 320 L600 280 L600 420 L0 420Z" fill="#7a3a6e"/>
+  <path d="M0 410 Q110 330 220 390 T420 380 T600 360 L600 430 L0 430Z" fill="#4a2a5e"/>
+  <!-- lake with sun reflection -->
+  <rect y="420" width="600" height="180" fill="url(#lake)"/>
+  <g fill="#ffe2a0" opacity="0.8">
+    <rect x="250" y="440" width="100" height="6" rx="3"/><rect x="265" y="465" width="70" height="5" rx="2.5"/>
+    <rect x="280" y="490" width="40" height="4" rx="2"/>
+  </g>
+  <!-- pine trees on the left shore -->
+  <g fill="#1d2a4a">
+    <path d="M40 520 L70 440 L100 520Z"/><path d="M90 540 L125 450 L160 540Z"/><path d="M20 560 L45 500 L70 560Z"/>
+  </g>
+  <!-- small boat on the right -->
+  <path d="M430 520 L530 520 L510 545 L450 545Z" fill="#1d2a4a"/>
+  <path d="M478 518 L478 465 L515 515Z" fill="#fff4dc"/>
+</svg>
