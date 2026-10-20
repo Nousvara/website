@@ -174,7 +174,10 @@
     navMount.parentNode.removeChild(navMount);
   }
   var footMount = document.getElementById('site-footer');
-  if (footMount) footMount.innerHTML = footerHTML;
+  // Pages ship the footer in their HTML (see website-v2-sources/build_static.py)
+  // so crawlers that do not run JavaScript still see the policy and contact
+  // links. Only fill it in when a page has none, e.g. a newly added page.
+  if (footMount && !footMount.children.length) footMount.innerHTML = footerHTML;
 
   var main = document.querySelector('main');
   if (main && !main.id) main.id = 'main-content';

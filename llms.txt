@@ -1,0 +1,26 @@
+# Nousvara
+
+> Nousvara is an independent software studio in Gurugram, India, run by Gulshan Yadav. It builds focused, private tools that run on the user's own device: no forced cloud, no subscription lock-in, and no account required to use what you own.
+
+## Products
+
+- [Swaro](https://nousvara.com/products/swaro.html): Offline speech to text and text to speech for Windows 10/11 and macOS on Apple Silicon. Hold a shortcut to dictate into any app; select any text and press a key to hear it read aloud. Runs fully on the device after a one-time model download, needs no GPU, and works on older laptops. 14 Whisper speech models (about 31 MB to 3.1 GB) and 30+ voices in 9 languages (English, Hindi, Japanese, Chinese, Korean, French, Italian, Portuguese, Spanish).
+- [Swaro pricing and download](https://nousvara.com/products/swaro-pricing.html): Free 14-day trial with every feature and no card. Then a one-time $29 lifetime license for one device, with free updates for version 1. 14-day money-back guarantee.
+- [Swaro changelog](https://nousvara.com/products/swaro-changelog.html): What changed in each version.
+- [Jigsaw](https://nousvara.com/products/jigsaw.html): Free, open-source (MIT) photo puzzle game for Android 7.0 or later. Turn any photo into a 2×2 to 6×6 puzzle and solve it by swapping pieces. Works offline; the photo never leaves the phone. Source: https://github.com/GulshanLabs/jigsaw-puzzle
+
+## About
+
+- [About the studio](https://nousvara.com/about.html): A maker-led studio built on two decades of engineering, from embedded hardware to cloud and large-scale data platforms.
+- [Philosophy](https://nousvara.com/philosophy.html): Why the tools keep the user's data on their own device.
+- [The Unlearn First method](https://nousvara.com/method.html): The eight-step thinking method behind how the products are built.
+
+## Policies
+
+- [Terms and license](https://nousvara.com/terms.html)
+- [Privacy policy](https://nousvara.com/privacy-policy.html)
+- [Refund policy](https://nousvara.com/refund-policy.html)
+
+## Contact
+
+- Email: contact@nousvara.com
