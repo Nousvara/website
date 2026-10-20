@@ -100,6 +100,76 @@ def write_footers() -> None:
 DATES_FILE = Path(__file__).resolve().parent / "page-dates.json"
 
 
+# Breadcrumb trail for each page: the names shown in Google instead of the
+# raw address. Add a line here when you add a page.
+BREADCRUMBS = {
+    "products.html": [("Products", "products.html")],
+    "products/swaro.html": [("Products", "products.html"), ("Swaro", "products/swaro.html")],
+    "products/swaro-pricing.html": [("Products", "products.html"), ("Swaro", "products/swaro.html"), ("Pricing", "products/swaro-pricing.html")],
+    "products/swaro-changelog.html": [("Products", "products.html"), ("Swaro", "products/swaro.html"), ("Changelog", "products/swaro-changelog.html")],
+    "products/jigsaw.html": [("Products", "products.html"), ("Jigsaw", "products/jigsaw.html")],
+    "about.html": [("About", "about.html")],
+    "philosophy.html": [("Philosophy", "philosophy.html")],
+    "method.html": [("Philosophy", "philosophy.html"), ("The Unlearn First method", "method.html")],
+    "terms.html": [("Terms and license", "terms.html")],
+    "privacy-policy.html": [("Privacy policy", "privacy-policy.html")],
+    "refund-policy.html": [("Refund policy", "refund-policy.html")],
+}
+
+# The block this script owns. Everything between the markers is rewritten on
+# every run, so never edit it by hand; change the page or the lists above.
+GENERATED = re.compile(r"\n?\s*<!-- generated:structured-data -->.*?<!-- /generated:structured-data -->", re.S)
+
+
+def _text(html: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).replace(" .", ".").replace(" ,", ",").strip()
+
+
+def structured_data(rel: str, html: str) -> list[dict]:
+    blocks = []
+    trail = BREADCRUMBS.get(rel)
+    if trail:
+        items = [("Home", "")] + trail
+        blocks.append({
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": i + 1, "name": name, "item": DOMAIN + href}
+                for i, (name, href) in enumerate(items)
+            ],
+        })
+    # Questions and answers taken from the page's visible FAQ section, so the
+    # data always matches what visitors read.
+    faq = re.search(r'<section[^>]*id="faq".*?</section>', html, re.S)
+    if faq:
+        pairs = re.findall(r"<summary>(.*?)</summary>\s*<div class=\"ac-body\">(.*?)</div>\s*</details>", faq.group(0), re.S)
+        if pairs:
+            blocks.append({
+                "@context": "https://schema.org", "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": _text(q), "acceptedAnswer": {"@type": "Answer", "text": _text(a)}}
+                    for q, a in pairs
+                ],
+            })
+    return blocks
+
+
+def write_structured_data() -> None:
+    for rel in SITEMAP_PAGES:
+        path = SITE / rel
+        text = path.read_text(encoding="utf-8")
+        clean = GENERATED.sub("", text)
+        blocks = structured_data(rel, clean)
+        if blocks:
+            scripts = "\n  ".join(
+                '<script type="application/ld+json">' + json.dumps(b, ensure_ascii=False, separators=(",", ":")) + "</script>"
+                for b in blocks
+            )
+            clean = clean.replace("</head>", f"\n  <!-- generated:structured-data -->\n  {scripts}\n  <!-- /generated:structured-data -->\n</head>", 1)
+        if clean != text:
+            path.write_text(clean, encoding="utf-8")
+            print("  structured data:", rel)
+
+
 def write_sitemap() -> None:
     known = json.loads(DATES_FILE.read_text()) if DATES_FILE.exists() else {}
     today = datetime.date.today().isoformat()
@@ -126,4 +196,5 @@ def write_sitemap() -> None:
 
 if __name__ == "__main__":
     write_footers()
-    write_sitemap()
+    write_structured_data()
+    write_sitemap()  # last, so its dates see the finished pages

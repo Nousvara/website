@@ -1,50 +1,50 @@
 {
   "about.html": {
     "lastmod": "2026-10-20",
-    "sha256": "29c797c743f05ea94f9677213cb866ac4464ce683413e6b516dd9d9e314ed8ef"
+    "sha256": "0a2a1d89bb01ef303a4c0cc6299bd0a0bc5b10308aef57a79d802c744aaa3c92"
   },
   "index.html": {
     "lastmod": "2026-10-20",
-    "sha256": "219be4f02733184521d8df9eef7d307c7d6e158e938cd2c073aaa928a2141e0f"
+    "sha256": "fafd3473a796539cca88a397940f50b501fc74f6fb6d494b60fb0e59ec1e7ef9"
   },
   "method.html": {
     "lastmod": "2026-10-20",
-    "sha256": "0b0c9a1c0350ec5094a17c2bbe25c6f24170c227139b2799b0efbb4a5929b170"
+    "sha256": "ef7f944f86588ececdd8e37a04c6808b820942100d1aaf78689085f050f0b821"
   },
   "philosophy.html": {
     "lastmod": "2026-10-20",
-    "sha256": "0d045319ae4f6ce43bf2ccc36366240b2af372a5c3f250017476eba7cf3b58ed"
+    "sha256": "5df6db915e828747e68bb17b628e8b186a9c821281d681513e17a301e87a260c"
   },
   "privacy-policy.html": {
     "lastmod": "2026-10-20",
-    "sha256": "0fd6875f4d008cde1b5f2b3751222c6d328673af7c93a3f70fb86e09005193da"
+    "sha256": "5878c9339ea8485504baccd1d33e53a2650fa9437aa9bf68b06061f097012213"
   },
   "products.html": {
     "lastmod": "2026-10-20",
-    "sha256": "75102c699443c3fdf0f6376e3090cc1c8350b404b43d2e48f9fce9f4155dd259"
+    "sha256": "af5f514d80f551bfe9e6dbd72d0446a87b0bb347ae8894e260ae9b15fe46f8ac"
   },
   "products/jigsaw.html": {
     "lastmod": "2026-10-20",
-    "sha256": "4a66c16d0e1f4be3da958c2c39c8c4568a7d3264c345a9342b518526d9e0fb22"
+    "sha256": "7d77d1f06ac951fadf9d53188eac088f58b5e2a6540a1f2627c4b9d7ec95d355"
   },
   "products/swaro-changelog.html": {
     "lastmod": "2026-10-20",
-    "sha256": "34daefe8afd49fd068e9a4404838b6f2169f49e9891db493f06ed8cee6aa901b"
+    "sha256": "cecd3a5906f95eaa140756acd814b907fb425879766e3db25189e56c0d1d7334"
   },
   "products/swaro-pricing.html": {
     "lastmod": "2026-10-20",
-    "sha256": "b02176d84298d96d3e11433ebf6e0635091be01b01344fbda21c3907615d0365"
+    "sha256": "077f818e4e0d9b5545dfa02fcde50e506154b46f8b378fbdbaf39fc9045265d8"
   },
   "products/swaro.html": {
     "lastmod": "2026-10-20",
-    "sha256": "767a0e8edc0f030115d52d286c0fb94674da6fe487793634c9371c227818aa76"
+    "sha256": "01b556c59cb8ee0f2cf833a0f1010a8ed10b77cf9c3c8891814f569b3e0f0275"
   },
   "refund-policy.html": {
     "lastmod": "2026-10-20",
-    "sha256": "f23192fd59d48ce67d56fb2fea053dadbcd3a9ad685714ff1af02890989af882"
+    "sha256": "b5a45fa0a2cae11a644cd7014e6827877f69081c8ad95a4b3590c2c0dbc719fa"
   },
   "terms.html": {
     "lastmod": "2026-10-20",
-    "sha256": "9034976457a259b3ae375ef31236426a0feb20847c78a6cf5a92d5586e5a1137"
+    "sha256": "0daf5d6ca62eb7e9ce50007d6d11957e388e013114255bbb77440a95638b50c7"
   }
 }
