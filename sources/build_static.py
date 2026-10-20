@@ -6,14 +6,16 @@
    and with it the links to the terms, privacy, refund and contact details.
 2. sitemap.xml, with each page's last-modified date taken from the file.
 
-Run after adding a page or changing the footer:
-    python3 sources/build_static.py
+Normally run through the one update command:
+    python3 sources/update.py
 
 The footer here must match `footerHTML` in js/site.js, which is still used
 as a fallback for any page that has no footer in its HTML.
 """
 
 import datetime
+import hashlib
+import json
 import re
 from pathlib import Path
 
@@ -92,11 +94,24 @@ def write_footers() -> None:
             print("  footer:", page.relative_to(SITE))
 
 
+# Each page's content fingerprint and the date it last changed. File dates
+# can't be used: a fresh `git clone` stamps every file with the clone date,
+# which would tell search engines that every page changed that day.
+DATES_FILE = Path(__file__).resolve().parent / "page-dates.json"
+
+
 def write_sitemap() -> None:
+    known = json.loads(DATES_FILE.read_text()) if DATES_FILE.exists() else {}
+    today = datetime.date.today().isoformat()
     rows = []
     for rel in SITEMAP_PAGES:
         path = SITE / rel
-        modified = datetime.date.fromtimestamp(path.stat().st_mtime).isoformat()
+        fingerprint = hashlib.sha256(path.read_bytes()).hexdigest()
+        entry = known.get(rel)
+        if not entry or entry["sha256"] != fingerprint:
+            entry = {"sha256": fingerprint, "lastmod": today}
+            known[rel] = entry
+        modified = entry["lastmod"]
         loc = DOMAIN if rel == "index.html" else DOMAIN + rel
         rows.append(f"  <url><loc>{loc}</loc><lastmod>{modified}</lastmod></url>")
     (SITE / "sitemap.xml").write_text(
@@ -105,6 +120,7 @@ def write_sitemap() -> None:
         + "\n".join(rows) + "\n</urlset>\n",
         encoding="utf-8",
     )
+    DATES_FILE.write_text(json.dumps(known, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(f"  sitemap: {len(rows)} pages with dates")
 
 

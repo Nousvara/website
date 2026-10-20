@@ -1,0 +1,50 @@
+{
+  "about.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "29c797c743f05ea94f9677213cb866ac4464ce683413e6b516dd9d9e314ed8ef"
+  },
+  "index.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "219be4f02733184521d8df9eef7d307c7d6e158e938cd2c073aaa928a2141e0f"
+  },
+  "method.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "0b0c9a1c0350ec5094a17c2bbe25c6f24170c227139b2799b0efbb4a5929b170"
+  },
+  "philosophy.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "0d045319ae4f6ce43bf2ccc36366240b2af372a5c3f250017476eba7cf3b58ed"
+  },
+  "privacy-policy.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "0fd6875f4d008cde1b5f2b3751222c6d328673af7c93a3f70fb86e09005193da"
+  },
+  "products.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "75102c699443c3fdf0f6376e3090cc1c8350b404b43d2e48f9fce9f4155dd259"
+  },
+  "products/jigsaw.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "4a66c16d0e1f4be3da958c2c39c8c4568a7d3264c345a9342b518526d9e0fb22"
+  },
+  "products/swaro-changelog.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "34daefe8afd49fd068e9a4404838b6f2169f49e9891db493f06ed8cee6aa901b"
+  },
+  "products/swaro-pricing.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "b02176d84298d96d3e11433ebf6e0635091be01b01344fbda21c3907615d0365"
+  },
+  "products/swaro.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "767a0e8edc0f030115d52d286c0fb94674da6fe487793634c9371c227818aa76"
+  },
+  "refund-policy.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "f23192fd59d48ce67d56fb2fea053dadbcd3a9ad685714ff1af02890989af882"
+  },
+  "terms.html": {
+    "lastmod": "2026-10-20",
+    "sha256": "9034976457a259b3ae375ef31236426a0feb20847c78a6cf5a92d5586e5a1137"
+  }
+}
