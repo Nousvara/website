@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+  Source for the homepage hero graphic (docs/assets/products/hero-product-family.webp).
+  Uses the real product screenshots from assets/products/, so the graphic never
+  drifts from what the apps actually look like.
+
+  Render (from sources/):
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
+      --hide-scrollbars --window-size=1100,720 --force-device-scale-factor=2 \
+      --screenshot="$PWD/masters/hero-product-family.png" \
+      "file://$PWD/hero-family.html"
+  Then run optimize_images.py and bump the ?v= query on the <img> in index.html.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1100px; height: 720px; overflow: hidden; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    background:
+      radial-gradient(700px 420px at 92% 0%, rgba(0,194,168,0.22), transparent 60%),
+      linear-gradient(160deg, #0a1626 0%, #0b1a2b 55%, #08131f 100%);
+  }
+  /* faint grid, as in the rest of the site's dark bands */
+  body::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 46px 46px;
+  }
+
+  .card {
+    position: absolute;
+    background: #111a28;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 22px;
+    box-shadow: 0 30px 70px -30px rgba(0,0,0,0.75);
+    padding: 24px;
+  }
+  .head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+  .head img, .jig-icon { width: 52px; height: 52px; border-radius: 13px; flex: 0 0 auto; }
+  .head h2 { color: #fff; font-size: 30px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; }
+  .head p { color: #a9b6c8; font-size: 17px; margin-top: 4px; }
+
+  /* Swaro */
+  .swaro { left: 44px; top: 56px; width: 640px; }
+  .shots { position: relative; width: 592px; height: 413px; }
+  .shot {
+    position: absolute; width: 380px;
+    border-radius: 10px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: 0 22px 44px -16px rgba(0,0,0,0.85);
+  }
+  .shot img { display: block; width: 100%; height: auto; }
+  .shot.tts { right: 0; top: 0; }
+  .shot.stt { left: 0; bottom: 0; }
+  .pill {
+    position: absolute; z-index: 2;
+    font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em;
+    color: #04131a; background: #00C2A8;
+    padding: 5px 11px; border-radius: 999px;
+    box-shadow: 0 6px 16px -6px rgba(0,0,0,0.6);
+  }
+  .pill.tts { right: 14px; top: -12px; background: #7fb2ff; }
+  .pill.stt { left: 64px; bottom: 260px; }
+
+  /* Jigsaw */
+  .jigsaw { left: 706px; top: 176px; width: 350px; }
+  .jig-icon {
+    background: #1f9e4a; display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5px; padding: 11px;
+  }
+  .jig-icon i { display: block; border-radius: 4px; background: rgba(255,255,255,0.88); }
+  .jig-icon i:nth-child(2), .jig-icon i:nth-child(3) { background: rgba(255,255,255,0.6); }
+  .phone {
+    margin: 0 auto; width: 176px;
+    border-radius: 18px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 22px 44px -16px rgba(0,0,0,0.85);
+  }
+  .phone img { display: block; width: 100%; height: auto; }
+
+  .tagline {
+    position: absolute; left: 48px; bottom: 34px;
+    color: #8495ab; font-size: 17px; font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <section class="card swaro">
+    <div class="head">
+      <img src="masters/swaro-icon.png" alt="">
+      <div>
+        <h2>Swaro</h2>
+        <p>Speech to text &amp; text to speech, offline</p>
+      </div>
+    </div>
+    <div class="shots">
+      <div class="shot tts"><img src="masters/swaro-tts.png" alt=""></div>
+      <span class="pill tts">Text to speech</span>
+      <div class="shot stt"><img src="masters/swaro-record.png" alt=""></div>
+      <span class="pill stt">Speech to text</span>
+    </div>
+  </section>
+
+  <section class="card jigsaw">
+    <div class="head">
+      <span class="jig-icon"><i></i><i></i><i></i><i></i></span>
+      <div>
+        <h2>Jigsaw</h2>
+        <p>Photo puzzle</p>
+      </div>
+    </div>
+    <div class="phone"><img src="../docs/assets/products/jigsaw_3.webp" alt=""></div>
+  </section>
+
+  <p class="tagline">Focused tools. More added when they are ready.</p>
+</body>
+</html>

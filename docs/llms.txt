@@ -1,6 +1,6 @@
 # Nousvara
 
-> Nousvara is an independent software studio in Gurugram, India, run by Gulshan Yadav. It builds focused, private tools that run on the user's own device: no forced cloud, no subscription lock-in, and no account required to use what you own.
+> Nousvara is an independent software studio in Gurugram, India, run by Gulshan Yadav. It builds focused, private tools that keep the user's data under their control: cloud only when it adds real value, and no subscription lock-in.
 
 ## Products
 

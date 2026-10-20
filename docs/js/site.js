@@ -147,7 +147,7 @@
     '<footer class="footer"><div class="container">' +
       '<div class="footer-top">' +
         '<div><div class="footer-logo">' + wordmark + '</div>' +
-        '<p>An independent software studio building focused, private tools that keep your data yours — built on two decades of engineering.</p></div>' +
+        '<p>An independent software studio building private, offline-first tools, grounded in twenty years of embedded, IoT and cloud engineering.</p></div>' +
         '<div class="footer-col"><h5>Products</h5>' +
           footerProducts +
           '<a href="' + products + '">All products</a></div>' +
@@ -174,7 +174,7 @@
     navMount.parentNode.removeChild(navMount);
   }
   var footMount = document.getElementById('site-footer');
-  // Pages ship the footer in their HTML (see website-v2-sources/build_static.py)
+  // Pages ship the footer in their HTML (see sources/build_static.py)
   // so crawlers that do not run JavaScript still see the policy and contact
   // links. Only fill it in when a page has none, e.g. a newly added page.
   if (footMount && !footMount.children.length) footMount.innerHTML = footerHTML;
